@@ -1,4 +1,5 @@
 :root {
+    /* cores */
     --clr-primary: #F8981C;
     --clr-secondary: #007DC2;
     
@@ -11,4 +12,11 @@
     --clr-black: #000000;
     --clr-gray: #F1F1F1;
     --clr-white: #FFF;
+
+    /* Tipografia */
+    --fs-h1: 3.5rem;
+    --fs-h2: 2.75rem;
+    --fs-h3: 2rem;
+    --fs-h4: 1.125rem;
+    --fs-h5: 1rem;
 }
