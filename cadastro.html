@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caminhos Livres - ONG - Cadastro</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/cadastro.html" aria-current="page">Cadastro</a></li>
+                <li><a href="/projetos.html" >Projetos</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h1>Cadastro</h1>
+            <p>Junte-se a nós! Preencha o formulário abaixo e venha fazer parte dessa rede de solidariedade que ajuda migrantes a recomeçar suas vidas com dignidade e esperança.</p>
+
+            <div>
+                <form action="">
+                     <fieldset>
+                        <legend>Informações Pessoais</legend>
+
+                        <div>
+                            <label for="nome">Nome:</label>
+                            <input type="text"  id="nome" name="nome" required>
+                        </div>
+
+                        <div>
+                            <label for="email">E-mail:</label>
+                            <input type="email" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
+                        </div>
+
+                        <div>
+                            <label for="cpf">CPF:</label>
+                            <p id="msg-cpf">Introduza só números</p>
+                            <input type="text"  id="cpf" name="cpf"  pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required aria-describedby="msg-cpf">
+                        </div>
+
+                        <div>
+                            <label for="telefone">Telefone:</label>
+                            <small id="msg-telefone">Introduza só números</small>
+                            <input type="text" id="telefone" name="telefone" pattern="\(\d{2}\) \d{4,5}-\d{4}" required aria-describedby="msg-telefone">
+                        </div>
+
+                        <div>
+                            <label for="data_nascimento">Data de Nascimento:</label>
+                            <input type="date" id="data_nascimento" name="data_nascimento" required>
+                        </div>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>Residência</legend>
+
+                        <div>
+                            <label for="endereco">Endereço:</label>
+                            <input type="text"  id="endereco" name="endereco" required>
+                        </div>
+
+                        <div>
+                            <label for="cep">CEP:</label>
+                            <p id="msg-cep">Introduza só números</p>
+                            <input type="text"  id="cep" name="cep"  pattern="^\d{5}-\d{3}$" required aria-describedby="msg-cep">
+                        </div>
+
+                        <div>
+                            <label for="cidade">Cidade:</label>
+                            <input type="text"  id="cidade" name="cidade" required>
+                        </div>
+
+                        <div>
+                            <label for="estado">Estado:</label>
+                            <input type="text"  id="estado" name="estado" required>
+                        </div>
+                    </fieldset>
+
+                    <input type="submit" value="Cadastrar">
+
+                </form>
+            </div>
+        </section>
+        
+    </main>
+    <footer>
+        <div>
+            <h3>Associação Caminhos Livres</h3>
+            <p>Promovendo inclusão, dignidade e novas oportunidades para migrantes em todo o Brasil.</p>
+
+            <p>
+                <span>Rua da Esperança, 215 - Liberdade, São Paulo - SP</span>
+                <br>
+                <span>+55 (11) 93425-7890 | 📧 contato@caminhoslivres.org.br</span>
+            </p>
+
+            <p>
+                <a href="#instagram" >Instagram</a>
+                <a href="#facebook" >Facebook</a>
+            </p>
+
+            <hr>
+
+            <p>
+                &copy; 2025 <span id="footer-current-year"></span> Associação Caminhos Livres — Todos os direitos reservados.<br>
+                Feito com ❤️ por <a href="https://keinermendoza.com" target="_blank">Keiner Mendoza</a>.
+            </p>
+        </div>
+    </footer>
+    <script>
+        // cria mascara do telefone usando javascript
+        const telefone = document.getElementById('telefone');
+
+        telefone.addEventListener('input', (e) => {
+            // armazena valor do input em variavel
+            let x = e.target.value; 
+
+            // remove tudo que não seja número
+            x = x.replace(/\D/g, '')
+            
+            // limita a 11 dígitos
+            if (x.length > 11) x = x.slice(0, 11);
+
+            // adiciona paréntesis al DDD
+            x = x.replace(/^(\d{2})(\d)/g, '($1) $2'); 
+            
+            // adiciona ifem antes dos últimos 4 dígitos
+            x = x.replace(/(\d{5})(\d{4})$/, '$1-$2'); 
+            
+            // setea valor do input usando variavel
+            e.target.value = x;
+        });
+
+        // cria mascara do CPF usando javascript
+        // codigo adpatado, original do davidsammuel@gmail.com disponivel em https://pt.stackoverflow.com/a/290510 
+        const cpf = document.getElementById('cpf');
+
+        cpf.addEventListener("input", (e) =>{
+            let v = e.target.value;
+            
+            if(isNaN(v[v.length-1])){ // impede entrar outro caractere que não seja número
+                cpf.value = v.substring(0, v.length-1);
+                return;
+            }
+            
+            cpf.setAttribute("maxlength", "14");
+            if (v.length == 3 || v.length == 7) cpf.value += ".";
+            if (v.length == 11) cpf.value += "-";
+        })  
+
+
+        // cria mascara do CEP usando javascript
+        const cep = document.getElementById('cep');
+
+        cep.addEventListener("input", (e) => {
+            let v = e.target.value;
+            
+            // impede entrada de caracteres não numéricos
+            if (isNaN(v[v.length - 1])) {
+                cep.value = v.substring(0, v.length - 1);
+                return;
+            }
+
+            // define o tamanho máximo (8 dígitos + 1 hífen)
+            cep.setAttribute("maxlength", "9");
+
+            // insere o hífen automaticamente após o quinto dígito
+            if (v.length === 5) cep.value += "-";
+        });
+    
+    </script>
+</body>
+</html>
