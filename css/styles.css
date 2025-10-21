@@ -65,18 +65,21 @@ h1,
 .h1 {
     font-size: var(--fs-h1);
     font-weight: 800;
+    color: var(--clr-secondary);
 }
 
 h2,
 .h2 {
     font-size: var(--fs-h2);
     font-weight: 800;
+    color: var(--clr-dark-blue);
 }
 
 h3,
 .h3 {
     font-size: var(--fs-h3);
     font-weight: 800;
+    color: var(--clr-dark-blue);
 }
 
 h4,
@@ -89,6 +92,22 @@ p,
     font-size: var(--fs-h5);
     line-height: 1.5;
 }
+
+.section {
+    max-width: var(--bk-xl);
+    margin-block: var(--e-md);
+    margin-inline: auto;
+    padding-inline: var(--e-md);
+}
+
+.section h2,
+.section .h2 {
+    margin-bottom: var(--e-xs);
+} 
+
+.section p {
+    max-width: 80ch;
+} 
 
 /* header */
 .navbar-wrapper {
@@ -179,6 +198,15 @@ p,
         --fs-h3: 2rem;
         --fs-h4: 1.25rem;
         --fs-h5: 1rem;
+    }
+
+    .section {
+        margin-block: var(--e-xl);
+        text-align: center;
+    }
+
+    .section p {
+        margin-inline: auto;
     }
     
     .navbar {
