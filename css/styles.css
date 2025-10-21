@@ -2,18 +2,35 @@
     /* cores */
     --clr-primary: #F8981C;
     --clr-secondary: #007DC2;
-    
     --clr-brown: #935303;
     --clr-dark-blue: #006399;
-
     --clr-soft-blue: #CCEDFF;
     --clr-soft-brown: #FDE9CE;
-    
     --clr-black: #000000;
     --clr-gray: #F1F1F1;
     --clr-white: #FFF;
 
+    /* Tipografia */
+    --fs-h1: 3.5rem;
+    --fs-h2: 2.75rem;
+    --fs-h3: 2rem;
+    --fs-h4: 1.125rem;
+    --fs-h5: 1rem;
 
+    /* Espaçamentos */
+    --e-xs: 8px;
+    --e-sm: 16px;
+    --e-md: 24px;
+    --e-lg: 32px;
+    --e-xl: 48px;
+    --e-2xl: 64px;
+
+    /* Breakpoints */
+    --bk-xs: 30rem;
+    --bk-sm: 40rem;
+    --bk-md: 48rem;
+    --bk-lg: 64rem;
+    --bk-xl: 80rem;
 }
 
 /* reset */
