@@ -32,20 +32,23 @@
     <link rel="manifest" href="/icons/site.webmanifest">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="/" aria-current="page">Home</a></li>
-                <li><a href="/cadastro.html">Cadastro</a></li>
-                <li><a href="/projetos.html">Projetos</a></li>
+    <header class="navbar-wrapper">
+        <nav class="navbar">
+            <img class="navbar__brand" src="/icons/android-chrome-192x192.png" alt="Logo de Keiner Mendoza, criador do site">
+            <ul class="navbar__link-list">
+                <li class="navlink"><a href="/" aria-current="page">Home</a></li>
+                <li class="navlink"><a href="/cadastro.html">Cadastro</a></li>
+                <li class="navlink"><a href="/projetos.html">Projetos</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section id="hero">
-            <img src="./images/hero.jpg" alt="mirada feliz de uma menina, se vem apenas seus olhos">
-            <h1>Caminhos Livres</h1>
-            <p>somos uma organização sem fins lucrativos fundada em 2018, em São Paulo, com o objetivo de acolher, orientar e apoiar migrantes e refugiados que chegam ao Brasil em busca de novas oportunidades e segurança.</p> 
+        <section class="hero" id="hero">
+            <img class="hero__background" src="./images/hero.jpg" alt="mirada feliz de uma menina, se vem apenas seus olhos">
+            <div>
+                <h1>Caminhos Livres</h1>
+                <p>somos uma organização sem fins lucrativos fundada em 2018, em São Paulo, com o objetivo de acolher, orientar e apoiar migrantes e refugiados que chegam ao Brasil em busca de novas oportunidades e segurança.</p> 
+            </div>
         </section>
         <section id="vision">
             <h2>Visão</h2>
