@@ -94,18 +94,34 @@ main {
     min-height: 400px;
 }
 
-.hero__background {
+
+
+.hero__picture__background-img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
 }
 
-/* .hero__text {
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+
+}
+.hero__text {
+    position: relative;
+    z-index: 2;
+    color: var(--clr-white);
     
-} */
+}
 
 /* break xs */
 @media (min-width:30rem) {

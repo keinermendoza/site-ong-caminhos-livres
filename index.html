@@ -44,8 +44,13 @@
     </header>
     <main>
         <section class="hero" id="hero">
-            <img class="hero__background" src="./images/hero.jpg" alt="mirada feliz de uma menina, se vem apenas seus olhos">
-            <div>
+            <div class="mask"></div>
+            <picture>
+                <source srcset="./images/hero-desktop.jpg" media="(min-width: 640px)" />
+                <img class="hero__picture__background-img" src="./images/hero-mobile.jpg" alt="mirada feliz de uma menina, se vem apenas seus olhos">
+            </picture>
+
+            <div class="hero__text">
                 <h1>Caminhos Livres</h1>
                 <p>somos uma organização sem fins lucrativos fundada em 2018, em São Paulo, com o objetivo de acolher, orientar e apoiar migrantes e refugiados que chegam ao Brasil em busca de novas oportunidades e segurança.</p> 
             </div>
