@@ -13,10 +13,28 @@
     --clr-gray: #F1F1F1;
     --clr-white: #FFF;
 
-    /* Tipografia */
-    --fs-h1: 3.5rem;
-    --fs-h2: 2.75rem;
-    --fs-h3: 2rem;
-    --fs-h4: 1.125rem;
-    --fs-h5: 1rem;
+
 }
+
+/* reset */
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+}
+
+
