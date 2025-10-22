@@ -16,6 +16,7 @@
     --fs-h3: 1.65rem;
     --fs-h4: 1.125rem;
     --fs-h5: 1rem;
+    --fs-xs:0.725rem;
 
     /* Espaçamentos */
     --e-xxs: 4px;
@@ -285,12 +286,40 @@ p,
     margin-top: var(--e-sm)
 }
 
+.card__badges {
+    margin-bottom: var(--e-xs);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--e-xs);
+}
+
 .card:hover {
     background-color: var(--clr-soft-brown);
 }
 .card:hover .card__img {
     transform: scale(1.10);
 }
+
+/* badges */
+.badge {
+    display: flex;
+    width: max-content;
+    gap: var(--e-xxs);
+    padding: var(--e-xxs) var(--e-xs);
+    border-radius: var(--e-xs);
+    font-size: var(--fs-xs);
+}
+
+.badge--blue { background-color: #3A89C9; }
+.badge--green { background-color: #5DBB63; }
+.badge--orange { background-color: #E9963E; }
+.badge--yellow { background-color: #D4AF37; }
+.badge--purple { background-color: #8E7CC3; }
+.badge--pink { background-color: #E667AF; }
+.badge--red { background-color: #C14E4E; }
+.badge--teal { background-color: #3FB9A0; }
+.badge--gray { background-color: #6B6B6B; }
+
 
 /* break xs */
 @media (min-width:30rem) {
