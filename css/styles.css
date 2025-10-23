@@ -37,6 +37,9 @@
     /* Shadows */
     --shadow-tw: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
     --shadow-deep: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; 
+
+    /* elementes */
+    --header-h: 70px;
 }
 
 /* reset */
@@ -118,8 +121,13 @@ p,
 } 
 
 /* header */
-.navbar-wrapper {
+.page-header {
+    background-color: var(--clr-white);
     width: 100%;
+    position: sticky;   
+    z-index: 3;
+    top: 0;               
+    left: 0;
     box-shadow: var(--shadow-tw);
 }
 
