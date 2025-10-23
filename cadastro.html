@@ -40,6 +40,11 @@
                 <li class="navlink"><a href="/cadastro.html" aria-current="page">Cadastro</a></li>
                 <li class="navlink"><a href="/projetos.html">Projetos</a></li>
             </ul>
+            <button class="hamburger">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
         </nav>
     </header>
     <main>
@@ -153,6 +158,11 @@
 
     </footer>
     <script>
+        // navbar
+        const hamburger = document.querySelector(".hamburger");
+        const nav = document.querySelector(".navbar");
+        hamburger.addEventListener("click", () => nav.classList.toggle("active"));
+
         // cria mascara do telefone usando javascript
         const telefone = document.getElementById('telefone');
 
