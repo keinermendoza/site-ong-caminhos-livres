@@ -201,12 +201,16 @@ p,
 }
 
 .navbar.active .navlink {
-  width: 100%;
   opacity: 1;
-  flex-grow: 1;
 }
 
-.navbar.active .navlink a {
+/* clase is-mobile e adicionada dinamicamente ao carregar pagina ou modificar o tamanho da janela  */
+.navbar.is-mobile .navlink {
+    width: 100%;
+    flex-grow: 1;
+}
+
+.navbar.is-mobile .navlink a {
     display: grid;
     place-content: center;
     width: 100%;
