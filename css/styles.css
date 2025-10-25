@@ -346,6 +346,52 @@ p,
     margin-bottom: var(--e-lg) var(--e-md);
 }
 
+/* cadastro.html */
+form {
+    text-align: left;
+    background-color: var(--clr-gray);
+    display: flex;
+    flex-direction: column;
+    gap: var(--e-md);
+    padding: var(--e-md);
+
+    margin-block: 1.5rem;  
+    border-radius: var(--e-sm);
+    box-shadow: var(--shadow-deep);    
+}
+
+fieldset {
+    padding: var(--e-md);
+    gap: var(--e-sm);
+    border-radius: inherit;
+    display: grid;
+}
+
+fieldset legend {
+    font-size: var(--fs-h4);
+}
+
+.form-control {
+    display: flex;
+    flex-direction: column;
+    gap: var(--e-xs);
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: var(--e-sm);
+}
+
+.form-control input {
+    border: 1px solid var(--clr-black);
+    width: 100%;
+    padding: var(--e-xs);
+    border-radius: var(--e-xs);
+}
+
+
 /* projetos.html */
 .projetos-grid {
     display: grid;
@@ -532,6 +578,17 @@ p,
         grid-template-columns: repeat(3, 1fr);
         gap: var(--e-md);
     }
+
+    /* cadastro */
+    fieldset {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--e-md);
+    }
+ 
+    .form-control.desktop-top-p {
+        padding-top: var(--e-md);
+    }
+
 
 
 }
