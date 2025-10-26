@@ -50,69 +50,120 @@
         </nav>
     </header>
     <main>
+        <div id="toast-container">
+            <template id="toast-success">
+                <div class="toast toast--success">
+                    <svg class="toast__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm13.36-1.814a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clip-rule="evenodd" />
+                    </svg>
+                    <p>Formulário enviado com sucesso!</p>
+                </div>
+            </template>
+
+            <template id="toast-error">
+                <div class="toast toast--error">
+                    <svg class="toast__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-1.72 6.97a.75.75 0 1 0-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 1 0 1.06 1.06L12 13.06l1.72 1.72a.75.75 0 1 0 1.06-1.06L13.06 12l1.72-1.72a.75.75 0 1 0-1.06-1.06L12 10.94l-1.72-1.72Z" clip-rule="evenodd" />
+                    </svg>
+                    <p>Erro ao tentar enviar o formulário.</p>
+                </div>
+            </template>
+        </div>
+        
+
         <section class="section">
             <h1 class="h2">Cadastro</h1>
             <p>Junte-se a nós! Preencha o formulário abaixo e venha fazer parte dessa rede de solidariedade que ajuda migrantes a recomeçar suas vidas com dignidade e esperança.</p>
 
             <div>
-                <form action="">
+                <form id="form-cadastro" action="">
                      <fieldset>
                         <legend>Informações Pessoais</legend>
 
-                        <div>
-                            <label for="nome">Nome:</label>
-                            <input type="text"  id="nome" name="nome" required>
+                        <div class="input-group ">
+                            <div class="form-control desktop-top-p">
+                                <label for="nome">Nome:</label>
+                                <input type="text" id="nome" name="nome" required >
+                                <p class="error-message">Por favor introduza um nome</p>
+                            </div>
+
+                            <div class="form-control">
+                                <label for="email">E-mail:</label>
+                                <input type="email" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required >
+                                <p class="error-message"></p>
+                            </div>
+
+                            <div class="form-control">
+                                <label for="cpf">CPF:</label>
+                                <small id="msg-cpf">Introduza só números</small>
+                                <input type="text"  id="cpf" name="cpf"  pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"  aria-describedby="msg-cpf" required >
+                                <p class="error-message"></p>
+                            </div>
                         </div>
 
-                        <div>
-                            <label for="email">E-mail:</label>
-                            <input type="email" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required>
-                        </div>
+                        <div class="input-group">
+                            <div class="form-control">
+                                <label for="telefone">Telefone:</label>
+                                <small id="msg-telefone">Introduza só números</small>
+                                <input type="text" id="telefone" name="telefone" pattern="\(\d{2}\) \d{4,5}-\d{4}"  aria-describedby="msg-telefone" required >
+                                <p class="error-message"></p>
+                            </div>
 
-                        <div>
-                            <label for="cpf">CPF:</label>
-                            <p id="msg-cpf">Introduza só números</p>
-                            <input type="text"  id="cpf" name="cpf"  pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required aria-describedby="msg-cpf">
-                        </div>
-
-                        <div>
-                            <label for="telefone">Telefone:</label>
-                            <small id="msg-telefone">Introduza só números</small>
-                            <input type="text" id="telefone" name="telefone" pattern="\(\d{2}\) \d{4,5}-\d{4}" required aria-describedby="msg-telefone">
-                        </div>
-
-                        <div>
-                            <label for="data_nascimento">Data de Nascimento:</label>
-                            <input type="date" id="data_nascimento" name="data_nascimento" required>
+                            <div class="form-control">
+                                <label for="data_nascimento">Data de Nascimento:</label>
+                                <input type="date" id="data_nascimento" name="data_nascimento" required >
+                                <p class="error-message"></p>
+                            </div>
                         </div>
                     </fieldset>
 
                     <fieldset>
                         <legend>Residência</legend>
 
-                        <div>
-                            <label for="endereco">Endereço:</label>
-                            <input type="text"  id="endereco" name="endereco" required>
+                        <div class="input-group">
+
+                            <div class="form-control ">
+                                <label for="cep">
+                                    <span>CEP:</span>
+                                    <div  tabindex="0" class="tooltip badge badge--blue">(Ver exemplos)
+                                        <span class="tooltiptext">CEPs  
+                                        78020-050
+                                        01501-060
+                                        </span>
+                                    </div>
+                                </label>
+                                <small id="msg-cep">Introduza só números</small>
+                                
+                                <input type="text"  id="cep" name="cep"  pattern="^\d{5}-\d{3}$"  aria-describedby="msg-cep" required >
+                                <p class="error-message"></p>
+                            </div>
+
+                            <div class="form-control">
+                                <label for="endereco">Endereço:</label>
+                                <input type="text"  id="endereco" name="endereco" required >
+                                <p class="error-message"></p>
+                            </div>
                         </div>
 
-                        <div>
-                            <label for="cep">CEP:</label>
-                            <p id="msg-cep">Introduza só números</p>
-                            <input type="text"  id="cep" name="cep"  pattern="^\d{5}-\d{3}$" required aria-describedby="msg-cep">
+                        <div class="input-group">
+                            <div class="form-control ">
+                                <label for="cidade">Cidade:</label>
+                                <small>Este campo é preenchido automaticamente usando o CEP</small>
+                                <input readonly type="text"  id="cidade" name="cidade" required >
+                                <p class="error-message"></p>
+                            </div>
+
+                            <div class="form-control">
+                                <label for="estado">Estado:</label>
+                                <small>Este campo é preenchido automaticamente usando o CEP</small>
+                                <input readonly type="text"  id="estado" name="estado" required >
+                                <p class="error-message"></p>
+                            </div>
                         </div>
 
-                        <div>
-                            <label for="cidade">Cidade:</label>
-                            <input type="text"  id="cidade" name="cidade" required>
-                        </div>
-
-                        <div>
-                            <label for="estado">Estado:</label>
-                            <input type="text"  id="estado" name="estado" required>
-                        </div>
                     </fieldset>
 
-                    <button disabled class="btn btn--primary">Cadastrar</button>
+                    <button  class="btn btn--primary">Cadastrar</button>
 
                 </form>
             </div>
