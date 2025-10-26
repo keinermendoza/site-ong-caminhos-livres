@@ -569,6 +569,73 @@ fieldset legend {
 }
 .btn--secondary  {background-color: var(--clr-soft-blue);}
 
+/* toast */
+#toast-container {
+    position: fixed;
+    bottom: var(--e-lg);
+    right: var(--e-lg);
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;   
+    flex-wrap: wrap; 
+    padding: var(--e-md);
+    gap: var(--e-md)
+}
+.toast {
+    position: relative;
+    overflow: hidden;
+    width: var(--bk-xs);
+    max-width: 80%;
+    display: flex;
+    gap: var(--e-sm);
+    align-items: center;
+    background-color: var(--clr-white);
+    padding: var(--e-sm);
+    box-shadow: var(--shadow-deep);
+    border-radius: var(--e-xs);
+    transform: translateX(100%);
+    animation: move-left ease-in-out 0.5s forwards;
+    z-index: 10;
+}
+
+/* toast intro animation */
+@keyframes move-left {
+    to {transform: translateX(0px);}
+}
+
+/* progress bar efect */
+.toast::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: var(--e-xxs);
+    background-color: var(--clr-secondary);
+    animation: progrees-bar 5s linear forwards;
+}
+.toast--success::after {
+    background-color: var(--clr-secondary);
+}
+.toast--error::after {
+    background-color: var(--clr-primary);
+}
+
+/* progress bar animation */
+@keyframes progrees-bar {
+    to {width: 0px;}
+}
+
+/* toast svg icon */
+.toast__icon {
+    width: var(--e-md);
+}
+.toast--success .toast__icon {
+    color: var(--clr-secondary);
+}
+.toast--error .toast__icon {
+    color: var(--clr-primary);
+}
 
 
 /* break xs */

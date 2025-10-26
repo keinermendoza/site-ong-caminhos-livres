@@ -1,8 +1,22 @@
+// Ajuda a manter o controle do estado geral de validade do formulário de cadastro
+const formErrors = [];
+
 document.addEventListener('DOMContentLoaded', () => {
+    // toast elements
+    const toastContainer = document.getElementById('toast-container');
+    const toastSuccess = document.getElementById('toast-success');
+    const toastError = document.getElementById('toast-error');
+
     // formulario
     const form = document.getElementById('form-cadastro');
     form.addEventListener('submit', (e) => {
         e.preventDefault();
+        if(formErrors.length > 0) {
+            displayToast(toastError, toastContainer)
+        } else {
+            displayToast(toastSuccess, toastContainer)
+            form.reset();
+        }
     })
 
     // campos do formulario
@@ -16,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const cidade = document.getElementById('cidade');
     const estado = document.getElementById('estado');
 
+    // ajuda a carregar todas as validações dentro de um forEach
     const toValidate = [
         {
             field: telefone,
@@ -77,17 +92,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // MENSAGEMS DE ERRO
 function setError(element, message) {
+    // adicionando o campo a lista de erros
+    if (!formErrors.includes(element)) {
+        formErrors.push(element)
+    }
     const container = element.parentElement;
     container.classList.add("error");
     container.querySelector(".error-message").innerText = message;
 }
-function cleanError(element) {
+function cleanError(element) { 
+    // removendo o campo da lista de errors
+    const index = formErrors.indexOf(element);
+    if (index !== -1) {
+        formErrors.splice(index, 1);
+    }
     const container = element.parentElement;
     container.classList.remove("error");
 }
 
 // VALIDAÇÕES
-
 // valida que os campos não estejão vazios
 const notEmpty = (field, fieldname) => {
     if (field.value.trim() === "") {
@@ -141,7 +164,7 @@ function minimumAge(datafield, fieldname) {
 // valida CPF
 function validateCPF(cpfField) {
     if(!coreValidateCPF(cpfField)) {
-        setError(cpfField, "CPF inválido. Por favor, verifique o formato do CPF")
+        setError(cpfField, "CPF inválido.")
     }
 }
 
@@ -232,7 +255,8 @@ function criaMascaraTelefone(event) {
 }
 
 function criaMascaraCPF(event) {
-    let v = event.target.value;
+    const cpf = event.target;
+    let v = cpf.value;
         
     if(isNaN(v[v.length-1])){ // impede entrar outro caractere que não seja número
         cpf.value = v.substring(0, v.length-1);
@@ -245,7 +269,8 @@ function criaMascaraCPF(event) {
 }
 
 function criaMascaraCEP(event) {
-    let v = event.target.value;
+    const cep = event.target;
+    let v = cep.value;
         
     // impede entrada de caracteres não numéricos
     if (isNaN(v[v.length - 1])) {
@@ -261,4 +286,20 @@ function criaMascaraCEP(event) {
 
 }
 
+// TOAST
+function displayToast(templateElement, containerElement) {
+  if (!templateElement || !containerElement) {
+    console.error("Template ou contenedor no encontrados.");
+    return;
+  }
 
+  const fragment = templateElement.content.cloneNode(true); 
+  const toast = fragment.querySelector(".toast"); 
+
+  containerElement.appendChild(fragment);
+
+  if (toast) {
+      //   remove o toast depois de 5.5s
+      setTimeout(() => toast.remove(), 5500)
+  } 
+}
