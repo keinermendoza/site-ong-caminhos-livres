@@ -121,10 +121,10 @@ const notEmpty = (field, fieldname) => {
 // valida email
 function validateEmail(emailfield) {
     const email = emailfield.value.trim();
-    const emailPattern = /^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$/;
+    const emailPattern = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
 
     if (!emailPattern.test(email)) {
-        setError(emailfield, "E-mail inválido. Por favor, verifique o formato do e-mail")
+        setError(emailfield, "E-mail inválido. Por favor, utilize um endereço de e-mail válido.")
     }
 }
 
@@ -164,7 +164,7 @@ function minimumAge(datafield, fieldname) {
 // valida CPF
 function validateCPF(cpfField) {
     if(!coreValidateCPF(cpfField)) {
-        setError(cpfField, "CPF inválido.")
+        setError(cpfField, "CPF inválido. Por favor, insira um CPF válido.")
     }
 }
 
@@ -225,7 +225,7 @@ async function validateAndUseCEP(cepField, cidade, estado) {
         estado.value = data.estado; 
 
     } catch(e) {
-        setError(cepField, `Não foi possivel reconhecer o cep ${cep}`)
+        setError(cepField, `Não foi possivel reconhecer o cep ${cep}. Por favor, insira um CEP válido.`)
         cidade.value = "";
         estado.value = "";
     }

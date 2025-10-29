@@ -83,20 +83,20 @@
                         <div class="input-group ">
                             <div class="form-control desktop-top-p">
                                 <label for="nome">Nome:</label>
-                                <input type="text" id="nome" name="nome" required >
+                                <input placeholder="Keiner Mendoza" type="text" id="nome" name="nome" required >
                                 <p class="error-message">Por favor introduza um nome</p>
                             </div>
 
                             <div class="form-control">
                                 <label for="email">E-mail:</label>
-                                <input type="email" id="email" name="email" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required >
+                                <input placeholder="fulano@example.com" type="email" id="email" name="email" pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$" required >
                                 <p class="error-message"></p>
                             </div>
 
                             <div class="form-control">
                                 <label for="cpf">CPF:</label>
                                 <small id="msg-cpf">Introduza só números</small>
-                                <input type="text"  id="cpf" name="cpf"  pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"  aria-describedby="msg-cpf" required >
+                                <input placeholder="123.456.789-00" type="text"  id="cpf" name="cpf"  pattern="\d{3}\.\d{3}\.\d{3}-\d{2}"  aria-describedby="msg-cpf" required >
                                 <p class="error-message"></p>
                             </div>
                         </div>
@@ -105,7 +105,7 @@
                             <div class="form-control">
                                 <label for="telefone">Telefone:</label>
                                 <small id="msg-telefone">Introduza só números</small>
-                                <input type="text" id="telefone" name="telefone" pattern="\(\d{2}\) \d{4,5}-\d{4}"  aria-describedby="msg-telefone" required >
+                                <input placeholder="(65) 99876-5432" type="text" id="telefone" name="telefone" pattern="\(\d{2}\) \d{4,5}-\d{4}"  aria-describedby="msg-telefone" required >
                                 <p class="error-message"></p>
                             </div>
 
@@ -134,13 +134,14 @@
                                 </label>
                                 <small id="msg-cep">Introduza só números</small>
                                 
-                                <input type="text"  id="cep" name="cep"  pattern="^\d{5}-\d{3}$"  aria-describedby="msg-cep" required >
+                                <input placeholder="78020-050" type="text"  id="cep" name="cep"  pattern="^\d{5}-\d{3}$"  aria-describedby="msg-cep" required >
                                 <p class="error-message"></p>
                             </div>
 
                             <div class="form-control">
                                 <label for="endereco">Endereço:</label>
-                                <input type="text"  id="endereco" name="endereco" required >
+                                <small>Logradouro, Número - Complemento - Bairro</small>
+                                <input placeholder="Rua da Matriz, 50 - Casa 2 - Centro" type="text"  id="endereco" name="endereco" required >
                                 <p class="error-message"></p>
                             </div>
                         </div>
