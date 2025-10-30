@@ -1,14 +1,4 @@
 :root {
-    /* cores */
-    --clr-primary: #F8981C;
-    --clr-secondary: #007DC2;
-    --clr-brown: #935303;
-    --clr-dark-blue: #006399;
-    --clr-soft-blue: #CCEDFF;
-    --clr-soft-brown: #FDE9CE;
-    --clr-black: #000000;
-    --clr-gray: #F1F1F1;
-    --clr-white: #FFF;
 
     /* Tipografia */
     --fs-h1: 2.75rem;
@@ -28,7 +18,6 @@
     --e-2xl: 64px;
     --e-3xl: 80px;
 
-
     /* Breakpoints */
     --bk-xs: 30rem;
     --bk-sm: 40rem;
@@ -44,35 +33,36 @@
     /* switch theme */
     --scale: 1;
 
-
-}
-
-@media (prefers-color-scheme: light) {
-  body {
-    background-color: white;
-    color: black;
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background-color: #121212;
-    color: white;
-  }
 }
 
 /* Modo oscuro si el usuario eligió 🌑 */
-html[data-theme="dark"] body {
+html[data-theme="dark"] {
     color-scheme: dark;
-    background: #121212;
-    color: white;
+  --clr-primary: #F8981C; /* Mantener */
+  --clr-secondary: hsl(315, 71%, 40%);
+  --clr-brown: hsl(33, 96%, 40%);
+  --clr-soft-blue: hsl(315, 41%, 15%);
+  --clr-dark-blue: hsl(315, 71%, 40%);
+  --clr-soft-brown: hsl(33, 96%, 10%);
+  --clr-black: #FFF; /* Texto */
+  --clr-gray: hsl(0, 0%, 25%);
+  --clr-white: #1E2019; /* Fondo */
+  --clr-red: hsl(0, 100%, 75%);
 }
 
 /* Modo claro si eligió ☀️ */
-html[data-theme="light"] body {
+html[data-theme="light"]  {
     color-scheme: light;
-    background: white;
-    color: black;
+    --clr-primary: #F8981C;
+    --clr-secondary: #007DC2;
+    --clr-brown: #935303;
+    --clr-dark-blue: #006399;
+    --clr-soft-blue: #CCEDFF;
+    --clr-soft-brown: #FDE9CE;
+    --clr-black: #000000;
+    --clr-gray: #F1F1F1;
+    --clr-white: #FFF;
+    --clr-red: hsl(0, 100%, 50%);
 }
 
 /* switch theme component  */
@@ -336,7 +326,6 @@ html[data-theme="light"] body {
 html {
     scroll-behavior: smooth;
     font-family:  Roboto, Ubuntu, 'Open Sans', sans-serif;
-    color-scheme: dark light;
 }
 
 body {
@@ -404,9 +393,15 @@ p,
     max-width: 80ch;
 } 
 
+.text-white {
+  color: white;
+}
+.text-var-blue {
+  color: var(--clr-dark-blue);
+}
 /* header */
 .page-header {
-    background-color: var(--clr-white);
+    background-color: var(--clr-gray);
     width: 100%;
     position: sticky;   
     z-index: 3;
@@ -451,7 +446,7 @@ p,
   position: absolute;
   width: var(--e-sm);
   height: 2px;
-  background: #fff;
+  background: var(--clr-white);
   margin-inline: auto;
   inset: 0;
   transition: 0.3s ease;
@@ -507,7 +502,7 @@ p,
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: var(--clr-white);
+    background: var(--clr-gray);
     clip-path: circle(100px at 90% -15%);
     transition: 1s ease-out;
     display: flex;
@@ -667,7 +662,7 @@ fieldset legend {
 }
 
 .form-control .error-message {
-    color: red;
+    color: var(--clr-red);
     margin-inline: 0;
     font-size: var(--fs-xs);
     display: none;
@@ -692,7 +687,7 @@ fieldset legend {
 
 /* mostrando linha vermelha  */
 .form-control.error input {
-    border: solid 1px red;
+    border: solid 1px var(--clr-red);
 }
 
 
@@ -751,7 +746,7 @@ fieldset legend {
 .tooltip {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted black; /* Decorativo */
+    border-bottom: 1px dotted var(--clr-black); /* Decorativo */
     cursor: pointer;
 }
 
@@ -761,8 +756,8 @@ fieldset legend {
     visibility: hidden;
     width: max-content;         
     max-width: 220px;
-    background-color: black;
-    color: #fff;
+    background-color: var(--clr-black);
+    color: var(--clr-white);
     text-align: left;
     padding: 6px 10px;
     border-radius: 6px;

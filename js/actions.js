@@ -6,26 +6,26 @@ window.addEventListener("load", () => {
 
 document.addEventListener('DOMContentLoaded', () => {
     // DARK MODE
-    const THEME_KEY = "darkMode";
+    const THEME_KEY = "theme";
     const html = document.documentElement;
     const toggle = document.querySelector("#switch-theme");
 
-    // Función auxiliar para aplicar el tema
+    // Função auxiliar para definir o tema
     function applyTheme(mode) {
         html.setAttribute("data-theme", mode);
         toggle.checked = mode === "dark";
         localStorage.setItem(THEME_KEY, mode);
     }
 
-    // Obtener tema guardado o preferencia del sistema
+    // Obtém o tema selecionado anteriormente; se não existir, define como "light"
     const storedTheme = localStorage.getItem(THEME_KEY);
-    const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const initialTheme = storedTheme || (systemPrefersDark ? "dark" : "light");
+    const initialTheme = storedTheme === "dark" ? "dark" : "light";
 
-    // Aplicar el tema inicial
+    // Aplicar o tema inicial
     applyTheme(initialTheme);
 
-    // Escuchar cambios manuales del usuario
+    
+    // Escuta mudanças no toggle feitas pelo usuário
     toggle.addEventListener("change", () => {
         const newTheme = toggle.checked ? "dark" : "light";
         applyTheme(newTheme);
