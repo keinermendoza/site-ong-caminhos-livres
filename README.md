@@ -166,7 +166,7 @@ Exemplo de configuração aplicada no projeto:
 ## Desenvolvimento e fluxo de trabalho
 
 O desenvolvimento do projeto seguiu a metodologia GitHub Flow, baseada em branches curtas e integração contínua.
-Foram criadas [20 issues](https://github.com/keinermendoza/site-ong-caminhos-livres/issues) distribuídas em [4 milestones](https://github.com/keinermendoza/site-ong-caminhos-livres/milestones), cada uma representando uma etapa do desenvolvimento.
+Foram criadas **20 issues** distribuídas em [4 milestones](https://github.com/keinermendoza/site-ong-caminhos-livres/milestones), cada uma representando uma etapa do desenvolvimento.
 
 ### Durante o processo:
 
@@ -203,7 +203,7 @@ cd site-ong-caminhos-livres
 
 O repositório foi configurado para deploy automático na Vercel, acionado sempre que a branch main recebe um pull request aprovado.
 
-O site está disponível desde a versão [v0.1.0](https://github.com/keinermendoza/site-ong-caminhos-livres/releases/tag/v0.1.0) no seguinte endereço:
+O site está disponível desde a versão **v0.1.0**
 
 🔗 [https://site-ong-caminhos-livres.vercel.app](https://site-ong-caminhos-livres.vercel.app)
 
@@ -221,6 +221,10 @@ Em especial, gostaria de reconhecer:
 
 **Riccardo Rapelli** – por compartilhar seu design do switch button utilizado para alternar entre os temas claro e escuro.
 [Switch by RiccardoRapelli made with CSS | Uiverse.io](https://uiverse.io/RiccardoRapelli/jolly-chicken-91)
+
+**GreatStack** – pelo tutorial [How To Make Toast Notification or Snack Bar For Website Using HTML CSS JavaScript](https://www.youtube.com/watch?v=mkNITfM1gm8), que serviu de referência para a criação do sistema de notificações do site. Embora o funcionamento seja diferente, aproveitei diversos estilos e animações CSS apresentados no vídeo.
+
+**Minifier.org** – pela disponibilização gratuita da [ferramenta online utilizada para minificar](https://www.minifier.org/) os arquivos CSS, JavaScript e HTML do projeto, contribuindo para uma melhor performance e otimização do site.
 
 
 A todos esses criadores e à comunidade web em geral, expresso meu sincero agradecimento pelo compartilhamento de conhecimento, que tornou este projeto possível.
